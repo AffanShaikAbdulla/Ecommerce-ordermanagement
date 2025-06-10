@@ -3,8 +3,8 @@ package com.ecommerce.dto;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.ecommerce.OrderStatus;
-import com.ecommerce.PaymentMethod;
+import com.ecommerce.entity.OrderStatus;
+import com.ecommerce.entity.PaymentMethod;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
