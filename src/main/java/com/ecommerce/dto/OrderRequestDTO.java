@@ -2,8 +2,8 @@ package com.ecommerce.dto;
 
 import java.util.List;
 
-import com.ecommerce.OrderItem;
-import com.ecommerce.PaymentMethod;
+import com.ecommerce.entity.OrderItem;
+import com.ecommerce.entity.PaymentMethod;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

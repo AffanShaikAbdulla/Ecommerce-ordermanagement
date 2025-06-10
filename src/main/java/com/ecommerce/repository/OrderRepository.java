@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.ecommerce.Order;
-import com.ecommerce.OrderStatus;
+import com.ecommerce.entity.Order;
+import com.ecommerce.entity.OrderStatus;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
