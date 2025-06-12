@@ -11,7 +11,7 @@ import com.ecommerce.entity.OrderStatus;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
-	@Query("SELECT o FROM orer o where o.status=:status")
+	@Query("SELECT o FROM Order o WHERE o.status = :status")
 	List<Order> findByStatsus(OrderStatus status);
 
 	List<Order> findByUserId(Long userId);

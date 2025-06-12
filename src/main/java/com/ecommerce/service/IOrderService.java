@@ -11,7 +11,7 @@ public interface IOrderService {
 
 	OrderResponseDTO updateOrderStatus(Long orderId, StatusUpdaeDTO statusupdate);
 
-	List<OrderResponseDTO> getOrderByStatus(String status);
+	List<OrderResponseDTO> getOrderByStatus(Long userId);
 
 	List<OrderResponseDTO> getOrderByUser(Long userId);
 }

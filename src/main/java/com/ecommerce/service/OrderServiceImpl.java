@@ -25,20 +25,19 @@ public class OrderServiceImpl implements IOrderService {
 	private final PaymentGatewayService paymentService;
 	private final ModelMapperUtil modelMapper;
 
-	
 	@Override
 	@Transactional
-	public OrderResponseDTO placeOrder(OrderRequestDTO orderRequest) {  // Correct parameter type
-	    if (!paymentService.validatePayement(orderRequest.getPaymentMethod())) {
-	        throw new PaymentValidationException("Payment method validation failed");
-	    }
+	public OrderResponseDTO placeOrder(OrderRequestDTO orderRequest) { // Correct parameter type
+		if (!paymentService.validatePayement(orderRequest.getPaymentMethod())) {
+			throw new PaymentValidationException("Payment method validation failed");
+		}
 
-	    Double totalAmount = caluclateTotalAmount(orderRequest);
-	    Order order = buildOrder(orderRequest, totalAmount);
-	    addOrderItems(orderRequest, order);
-	    
-	    Order savedOrder = orderRepository.save(order);
-	    return modelMapper.map(savedOrder, OrderResponseDTO.class);
+		Double totalAmount = caluclateTotalAmount(orderRequest);
+		Order order = buildOrder(orderRequest, totalAmount);
+		addOrderItems(orderRequest, order);
+
+		Order savedOrder = orderRepository.save(order);
+		return modelMapper.map(savedOrder, OrderResponseDTO.class);
 	}
 
 	@Override
@@ -48,7 +47,7 @@ public class OrderServiceImpl implements IOrderService {
 	}
 
 	@Override
-	public List<OrderResponseDTO> getOrderByStatus(String status) {
+	public List<OrderResponseDTO> getOrderByStatus(Long userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
